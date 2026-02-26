@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmo Birth | Sua Jornada Estelar</title>
+    <meta name="description"
+        content="Descubra a imagem astronômica da NASA do dia em que você nasceu. Uma experiência imersiva no cosmo.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="nebula-bg"></div>
+    <div class="overlay"></div>
+
+    <main class="app-wrapper">
+        <div class="hero-section">
+            <header class="main-header">
+                <div class="logo-area">
+                    <span class="logo-dot"></span>
+                    <span class="logo-text">CosmoBirth</span>
+                </div>
+                <nav class="minimal-nav">
+                    <a href="https://apod.nasa.gov/" target="_blank" rel="noopener">NASA APOD</a>
+                </nav>
+            </header>
+
+            <div class="hero-content">
+                <h1 class="glitch-title" data-text="A Estrela do Seu Nascimento">A Estrela do Seu Nascimento</h1>
+                <p class="hero-subtitle">Mergulhe na vastidão do espaço e recupere o fragmento do universo que
+                    testemunhou sua chegada.</p>
+
+                <form class="search-experience" id="search-form">
+                    <div class="date-input-wrapper">
+                        <label for="birth-date" class="floating-label">Escolha sua data</label>
+                        <input type="date" id="birth-date" class="modern-datepicker" required>
+                    </div>
+                    <button type="submit" id="fetch-btn" class="glow-button">
+                        <span class="btn-msg">Iniciar Viagem</span>
+                        <span class="btn-icon">→</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <section id="result-area" class="viewport-result hidden">
+            <div class="floating-controls">
+                <button class="icon-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+            </div>
+
+            <article class="apod-immersive-card">
+                <div class="media-frame">
+                    <div id="media-container" class="media-wrapper">
+                        <!-- Content via JS -->
+                    </div>
+                </div>
+
+                <div class="content-frame">
+                    <header class="content-header">
+                        <span id="apod-date" class="date-label"></span>
+                        <h2 id="apod-title" class="entry-title"></h2>
+                    </header>
+                    <div class="text-body">
+                        <p id="apod-explanation"></p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <div id="loader" class="cosmic-loader hidden">
+            <div class="core"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
