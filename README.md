@@ -58,3 +58,10 @@ Com o backend rodando:
 ## 🛠️ Solução de Problemas
 - **Tela de Carregamento Infinita**: Certifique-se de que o backend (`app.py`) está rodando antes de buscar uma data.
 - **Erro de CORS**: O backend já está configurado para aceitar requisições locais, mas certifique-se de que a porta `5000` está livre.
+- **Acesso Direto ao Backend no Navegador (Erro 404)**: A porta `5000` exibe apenas as respostas da API de dados (ex: `/api/apod`). Se referências como `http://localhost:5000/nasadata` retornarem `404 Not Found`, lembre-se de que a página visual não mora lá. 
+- **Ver a Interface do Frontend (Recomendado)**: Caso não consiga abrir o `index.html` diretamente por restrição a arquivos locais (`file:///`), inicie um servidor dentro da pasta `FRONTEND`:
+  ```powershell
+  cd FRONTEND
+  python -m http.server 8080
+  ```
+  Agora acesse `http://localhost:8080` para desfrutar da experiência do CosmoBirth!
